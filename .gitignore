@@ -3,6 +3,9 @@
 ## Please do not remove line 5 - thanks! 🙂 ##
 ###############################################
 *.sketch
+README-template.md
+style-guide.md
+Writeup.txt
 
 # Avoid accidental XD or Figma upload if you convert the design file
 #######################################################
@@ -10,6 +13,8 @@
 #######################################################
 *.xd
 *.fig
+.idea
+design
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
