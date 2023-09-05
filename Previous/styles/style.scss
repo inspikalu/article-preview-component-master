@@ -1,0 +1,207 @@
+@use "Variables";
+@import "Reset";
+
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: Variables.$Light-Grayish-Blue;
+  margin-block: 7rem;
+}
+
+section.body {
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(1, 1fr);
+  margin-inline: 2rem;
+
+  .image {
+    overflow: hidden;
+
+    img {
+      border-radius: Variables.$fs-500 Variables.$fs-500 0 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 0;
+    }
+  }
+
+  .card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 0 1.25rem 1.25rem;
+    gap: 2rem;
+
+    h1 {
+      font-size: Variables.$fs-700;
+      font-weight: Variables.$fw-bold;
+      width: 30ch;
+    }
+
+    p {
+      width: 50ch;
+
+    }
+
+    h1, p:not(.share-panel > p), .author {
+      padding-inline: Variables.$fs-500;
+    }
+
+    .author {
+      display: grid;
+      grid-template-columns: .2fr 1.2fr .2fr;
+      grid-template-areas:
+      'avatar text icon'
+      'avatar date icon';
+      gap: 0;
+      place-content: center;
+      position: relative;
+
+      * {
+        place-self: center;
+        align-items: flex-start;
+      }
+
+      img[alt="Headshot image of author"] {
+        width: 4rem;
+        border-radius: calc(4rem / 2);
+        grid-area: avatar;
+
+      }
+
+      .share-btn {
+        background-color: Variables.$Light-Grayish-Blue;
+        grid-area: icon;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        img[alt='Share Icon'] {
+          width: 15px;
+          height: 13px;
+        }
+
+      }
+
+      h2 {
+        grid-area: text;
+        align-self: flex-end;
+        justify-self: flex-start;
+      }
+
+      span {
+        grid-area: date;
+        align-self: flex-start;
+        justify-self: flex-start;
+      }
+
+
+    }
+  }
+}
+
+.share-panel {
+  display: none;
+}
+
+.share-panel.active {
+  background-color: Variables.$Very-Dark-Grayish-Blue;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  bottom: 0;
+  //padding: 1rem;
+  padding: 2rem;
+  width: 100%;
+  color: white;
+  font-size: Variables.$fs-600;
+
+  .links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    img {
+      width: 2rem;
+    }
+  }
+}
+
+.share-btn {
+  z-index: 10;
+}
+
+@media screen and (min-width: 800px) {
+  section.body {
+    //grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: .7fr 1.5fr;
+    width: 80%;
+
+    .image {
+      img {
+        object-fit: cover;
+        border-radius: Variables.$fs-500 0 0 Variables.$fs-500;
+      }
+    }
+
+    .card {
+      border-radius: 0 Variables.$fs-500 Variables.$fs-500 0;
+      gap: 1rem;
+    }
+  }
+  .share-panel {
+    display: none;
+  }
+  .share-panel.active {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    position: absolute;
+    bottom: 55%;
+    right: -35%;
+    transform: translate(-50%, -50%);
+    padding: .6rem 7rem;
+    background-color: Variables.$Very-Dark-Grayish-Blue;
+    border-radius: 10px;
+    width: 40% !important;
+    color: white;
+    font-size: Variables.$fs-600;
+    z-index: 200;
+
+
+    .links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  .share-panel.active::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 11px;
+    border-style: solid;
+    border-color: Variables.$Very-Dark-Grayish-Blue transparent transparent transparent;
+    z-index: 200;
+  }
+
+}
