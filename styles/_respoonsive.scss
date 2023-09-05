@@ -1,0 +1,35 @@
+@include media-lg {
+  .article {
+    grid-template-columns: .8fr 1.5fr;
+
+    .article__image {
+      border-radius: 10px 0 0 10px;
+    }
+  }
+
+
+  .share__panel {
+    &::after{
+      content: " ";
+      border: 5px solid $Very-Dark-Grayish-Blue;
+    }
+    width: clamp(38%, 35%, 30%);
+    left: 76%;
+    height: 3rem;
+    bottom: 30%;
+    border-radius: 10px;
+
+    span {
+      font-size: 100%;
+    }
+
+    &__links a img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .share-btn {
+      display: none;
+    }
+  }
+}

@@ -1,3 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
 
+.pi1r {
+  padding-inline: 2rem;
+}
+
+body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #dae6f1;
+}
+
+.article {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 95%;
+  background-color: #fff;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+}
+.article__image {
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  height: 100%;
+}
+.article__image img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.article__information {
+  display: flex;
+  flex-direction: column;
+}
+.article__information h2 {
+  max-width: 30ch;
+  color: #343d4c;
+}
+.article__information p {
+  margin-block: 1rem;
+  max-width: 42ch;
+  color: hsl(214, 17%, 51%);
+}
+.article__information--author {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  padding-bottom: 10px;
+}
+.article__information--author img[alt="Michelle the author"] {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+.article__information--author div {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.article__information--author img[alt="Share icon"] {
+  margin-left: auto;
+}
+
+.share__panel {
+  display: none;
+  width: 100%;
+  background-color: hsl(217, 19%, 35%);
+  position: absolute;
+  bottom: 0;
+  height: 90px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+}
+.share__panel span {
+  display: inline-block;
+  font-size: 2rem;
+  color: white;
+  padding-inline-start: 1rem;
+}
+.share__panel__links {
+  display: flex;
+  flex-wrap: wrap;
+}
+.share__panel__links a img {
+  width: 2rem;
+  height: 2rem;
+  margin-inline: 1rem;
+}
+.share__panel img.share-btn {
+  margin-inline-end: 1.6rem;
+}
+
+.share__panel.open {
+  display: flex;
+}
+
+.share-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 740px) {
+  .article {
+    grid-template-columns: 0.8fr 1.5fr;
+  }
+  .article .article__image {
+    border-radius: 10px 0 0 10px;
+  }
+  .share__panel {
+    width: 38%;
+    left: 76%;
+    height: 3rem;
+    bottom: 30%;
+    border-radius: 10px;
+  }
+  .share__panel::after {
+    content: " ";
+    border: 5px solid hsl(217, 19%, 35%);
+  }
+  .share__panel span {
+    font-size: 100%;
+  }
+  .share__panel__links a img {
+    width: 20px;
+    height: 20px;
+  }
+  .share__panel .share-btn {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
