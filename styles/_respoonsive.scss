@@ -9,11 +9,20 @@
 
 
   .share__panel {
-    &::after{
-      content: " ";
-      border: 5px solid $Very-Dark-Grayish-Blue;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: $Very-Dark-Grayish-Blue transparent transparent transparent;
     }
-    width: clamp(38%, 35%, 30%);
+
+    width: clamp(36%, 35%, 30%);
+    justify-content: space-around;
+    align-items: center;
     left: 76%;
     height: 3rem;
     bottom: 30%;
@@ -32,4 +41,5 @@
       display: none;
     }
   }
+
 }

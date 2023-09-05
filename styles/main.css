@@ -43,6 +43,7 @@ body {
 .article__information h2 {
   max-width: 30ch;
   color: #343d4c;
+  padding-top: 1rem;
 }
 .article__information p {
   margin-block: 1rem;
@@ -119,15 +120,23 @@ body {
     border-radius: 10px 0 0 10px;
   }
   .share__panel {
-    width: 38%;
+    width: 36%;
+    justify-content: space-around;
+    align-items: center;
     left: 76%;
     height: 3rem;
     bottom: 30%;
     border-radius: 10px;
   }
   .share__panel::after {
-    content: " ";
-    border: 5px solid hsl(217, 19%, 35%);
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
   }
   .share__panel span {
     font-size: 100%;
