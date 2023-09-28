@@ -120,7 +120,7 @@ body {
     border-radius: 10px 0 0 10px;
   }
   .share__panel {
-    width: 36%;
+    width: clamp(150px, 50%, 272px);
     justify-content: space-around;
     align-items: center;
     left: 76%;
