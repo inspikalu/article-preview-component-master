@@ -1,6 +1,7 @@
 @include media-lg {
   .article {
     grid-template-columns: .8fr 1.5fr;
+    width: clamp(500px, 80%, 700px);
 
     .article__image {
       border-radius: 10px 0 0 10px;
